@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            height: 300pc ;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(figma\ 10.jpeg);
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+   <div class="navbar">
+        <a href="Home.html"><button type="submit">Home</button></a>
+        <a href="product.html"><button type="submit">Product</button></a>
+        <a href="Buy and Sell.html"><button type="submit">Buy And Sell</button></a>
+        <a href="contact.html"><button type="submit">Contact</button></a>
+        <a href="chat.html"><button type="submit">Chart</button></a>
+        <a href="about.html"><button type="submit">About Us</button></a>
+       
+        <a href="https://habibgh1234.github.io/Habib.com/"><button type="submit">More</button></a>
+<a href="Direction.html"> <button type="submit">Get Direction</button></a>
+</div>
+<div> 
+    <h1 style="top: auto;">Our Products</h1><br />
+
+        <h1 style="color: #020512;"></h1> 
+
+    </div>
+<div class="search-toolbar">
+    <input type="text" id="search-input" placeholder="Search...">
+<button id="search-btn">Search</button>
+
+<scrip>
+    <script>
+            document.getElementById('search-btn').onclick = function() {
+    var searchQuery = document.getElementById('search-input').value;
+            var url = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery);
+            window.location.href = url;
+}
+</script>
+
+<style>
+    .search-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 20%;
+        padding: 20px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    .search-toolbar input[type="text"] {
+        width: 40%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+    }
+
+    .search-toolbar button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 3px 5px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .search-toolbar button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+   
+
+    <script>
+        // Change active navigation link color on scroll
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementsByClassName("navbar")[0];
+        var navItems = navbar.getElementsByTagName("a");
+
+        for (var i = 0; i < navItems.length; i++) {
+            navItems[i].addEventListener('click', clickFunction);
+        }
+
+        function clickFunction(event) {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        }
+
+        function myFunction() {
+            var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+            for (var i = 0; i < navItems.length; i++) {
+                var currLink = navItems[i];
+                var refElement = document.getElementById(currLink.getAttribute("href").substr(1));
+                if (refElement.offsetTop <= scrollPos && refElement.offsetTop + refElement.clientHeight > scrollPos) {
+                    currLink.className = "active";
+                } else {
+                    currLink.className = currLink.className.replace(" active", "");
+                }
+            }
+        }
+    </script>
+    
+</body>
+
+
+</html>
